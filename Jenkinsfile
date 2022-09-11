@@ -8,6 +8,9 @@ pipeline {
             }
         }
         stage('Hellogdfgdfgdfgd') {
+            when {
+                branch "test*"
+            }
             steps {
                 echo 'Hello Worldgdgdgdgdgdgdg'
             }
