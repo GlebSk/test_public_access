@@ -1,0 +1,15 @@
+If other PersistentVolumeClaims could use the PV that you specify,
+you first need to reserve that storage volume. 
+Specify the relevant PersistentVolumeClaim in the claimRef field 
+of the PV so that other PVCs can not bind to it.
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: foo-pv
+spec:
+  storageClassName: ""
+  claimRef:
+    name: foo-pvc
+    namespace: foo
+  ...
